@@ -29,6 +29,7 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Use nix devshell
         uses: nicknovitski/nix-develop@v1
+        with: --impure
 
       - name: "nix fmt (with treefmt)"
         run: nix fmt
@@ -44,6 +45,7 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Use nix devshell
         uses: nicknovitski/nix-develop@v1
+        with: --impure
 
       - name: nix build
         run: nix build 
@@ -59,6 +61,7 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Use nix devshell
         uses: nicknovitski/nix-develop@v1
+        with: --impure
 
       - name: build
         run: cargo build --workspace --all-targets
@@ -77,6 +80,7 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Use nix devshell
         uses: nicknovitski/nix-develop@v1
+        with: --impure
 
       - name: Coverage
         run: cargo tarpaulin --output-dir coverage --out lcov
